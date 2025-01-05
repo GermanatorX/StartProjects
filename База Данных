@@ -1,0 +1,55 @@
+User_Data = {
+    'Гриша': {
+        'Name': 'Grigorii0',
+        'Password': 'Grig-123Pass',
+        'Age': '6'
+    },
+    'Игорь': {
+        'Name': 'IgorИгорь',
+        'Password': 'IgoreshikPassword05062014',
+        'Age': '9'
+    },
+    'Герман': {
+        'Name': 'Germanator',
+        'Password': 'Germanator1608GS',
+        'Age': '13'
+    }
+}
+
+print("На платформе зарегистрировано 3 человека, какие данные ты хочешь посмотреть?")
+print("У нас есть: Имена, Пароли, Возраст, Все о *имя пользователя (в именительном падеже)*.", end="\n")
+
+while True:
+    докс = input("Если ты хочешь что-то найти, то напиши то, что тебе надо (или 'выход' для завершения): ")
+
+    if докс == 'Имена':
+        print("Ники пользователей:")
+        for details in User_Data.values():
+            print(details['Name'])
+    elif докс == 'Пароли':
+        print("Пароли пользователей:")
+        for details in User_Data.values():
+            print(details['Password'])
+    elif докс == 'Возраст':
+        print("Возраст пользователей:")
+        for details in User_Data.values():
+            print(details['Age'])
+    elif докс == 'Все о Герман':
+        print("Информация о пользователе Герман:")
+        for key, value in User_Data['Герман'].items():
+            print(f"{key} - {value}")
+    elif докс == 'Все о Игорь':
+        print("Информация о пользователе Игорь:")
+        for key, value in User_Data['Игорь'].items():
+            print(f"{key} - {value}")
+    elif докс == 'Все о Гриша':
+        print("Информация о пользователе Гриша:")
+        for key, value in User_Data['Гриша'].items():
+            print(f"{key} - {value}")
+    elif докс.lower() == 'выход':
+        print("Выход из программы.")
+        break
+    else:
+        print('Ты ввел команду неправильно. Если тебе нужны все команды, то напиши "Все команды".')
+
+    print("\nПожалуйста, введите следующую команду:")
